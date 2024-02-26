@@ -1,0 +1,120 @@
+XPath
+------
+Attribute based xpath
+**************************
+//tagname[@attribute='attribute']
+
+//input[@id='username']
+//input[@type='text']
+
+
+Text based xpath
+*******************
+//tagname[text()='textValue']
+//label[text()='Username']
+
+Partial Match xpath:
+===============
+
+Partial Attribute based xpath
+******************************
+//tagname[contains(@attribute,'partial att.value')]
+//input[contains(@class,'Submit')]
+
+Partial Text based xpath
+****************************
+//tagname[contains(text(),'textvalue')]
+
+Collection based xpath
+=================
+
+(relative xpath)[index]
+
+xpath index starts from 1
+>5-not recommended
+
+
+Axes based xpath/Relationship based xpath
+==================================
+
+Grandparent-Grandchild
+-----------------------------------
+//tagname[@attribute='attribute value']//tagname of the child
+//form[@id='login']//input
+
+Parent-Child
+-------------------
+(Relative xpath of Parent)/tagname
+//p[@class='top']/input
+======================
+GrandChild-GrandParent
+
+(Relative xpath of the child)/ancestor:: tagname
+
+//input[@id='password']/ancestor::form
+
+(Relative xpath of the child)/descendant::tagname
+=======================================================
+
+Child-Parent
+-------------
+(Relative xpath of the child)/parent::tagname
+
+
+//input[@id='password']/parent::p
+
+//input[@id='password']/..
+
+(Relative xpath of the child)/parent::tagname[@attribute='attribute value']
+=============================================================
+Sibiling
+----------
+Elder sibling to younger sibling:
+
+(Relative xpath of elder)/following-sibling:: younger sibling tagname/xpath
+
+
+//label[@for='username']/following-sibling::input
+//label[@for='username']/following-sibling::input[@class='inputLogin']
+
+==================================================================
+Younger sibilng- Elder Sibling
+
+(Relative xpath of the younger Sibiling)/preceeding-sibling::tagname
+//input[@class='inputLogin']/preceding-sibling::label
+//input[@class='inputLogin']/preceding-sibling::label[@for='username']
+
+==================================================================
+Cousin
+----------
+
+Elder cousin to younger cousin
+==========================
+Relative xpath of the elder cousin/following::tagname
+//label[@for='username']/following::label
+
+(if we have more matches in the cousin relation we need to use index to locate appropriate webelement
+//label[@for='username']/following::input[3]
+-------------------------------------------------------------------------
+Younger cousin to Elder Cousin
+======================
+Realtive xpath of YoungerCousin/preceding::tagname
+//input[@class='decorativeSubmit']/preceding::label
+
+If you have more matches..Preceding will go to the topmost match and using index  to locate appropriate webelement
+
+======================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

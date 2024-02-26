@@ -1,5 +1,5 @@
 import { test, chromium } from "@playwright/test";
-test('Learn Locators using CSS', async ({ page }) => {
+test('Learn Locators using CSS', async ({ page}) => {
     // in line 3 becuase we used fixture {page} we dont need lines 5 to 11
     //promise keyword as u mouse over on async then it will need await for all promise
    
